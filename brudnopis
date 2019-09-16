@@ -1,0 +1,66 @@
+<body>
+    <!--navbar-->
+    <nav class="navbar">
+      <div class="navbar-center">
+          <span class="nav-icon">
+              <i class="fas fa-bars"></i>
+          </span>
+          <img src="./images/logo10.png"></img>
+          <div class="cart-btn">
+              <span class="nav-icon">
+                  <i class="fas fa-cart-plus"></i>
+              </span>
+              <div class="cart-items">0
+                  
+              </div>
+          </div>
+      </div>  
+        
+    </nav>
+    <!--end of navbar-->
+    <!--hero-->
+    
+    <!--Mask-->
+<div id="intro" class="view">
+
+  
+      
+ <div class="view" style="background-image: url(img/Hero-tea8.jpeg);" alt="img/Hero-tea8.jpeg"></div>
+  </div>
+
+
+<!--/.Mask-->
+
+
+    
+ <script  src="app.js"></script>   
+</body>
+</html>
+
+........=====================
+
+
+<!--Mask-->
+<div id="intro" class="view">
+
+    <div class="full-big-img"></div>
+</div>
+<!--/.Mask-->
+================
+css
+
+html,
+body,
+header,
+#intro {
+    height: 100%;
+    
+}
+
+#intro {
+    background: url(https://cdn.shopify.com/s/files/1/0010/9454/9567/products/Chinese_Black_Tea_Aromatized_afabd1b1-d4e3-468c-ba22-6d9810779d59_620x.jpg?v=1526100497) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
