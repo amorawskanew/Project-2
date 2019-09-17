@@ -11,7 +11,9 @@ const cartContent = document.querySelector(".cart-content");
 const productsDOM = document.querySelector(".products-center");
 
 //cart
-let cart ={}
+let cart =[];
+//buttons
+let buttonsDOM = [];
 
 //getting the products
 class Products{
@@ -36,15 +38,75 @@ class Products{
 
 
 //dispalay products
-class UI{}
+class UI{
+displayProducts(products){ 
+ let result = "";
+ products.forEach(product =>{
+  result +='
+            <article class="product">
+                <div class="img-container">
+                    <img src=${product.image} alt="product" classs="product-img">
+                    <button class="bag-btn" data-id=${product.id}>
+                <i class="fas fa-shopping-cart"></i>
+                Add to bag
+                </button>
+                </div>
+                <h3>${product.title}</h3>
+                <h4>$10</h4>
+            </article>
+            
+  ';
+ });
 
+ productsDOM.innerHTML = result;
+
+}
+getButtons(){ 
+ const buttons = {...document.querySelectorAll(".bag-btn")
+ ];
+ buttonsDOM = buttons;
+ buttons.forEach(button) =>{
+  let id =button.dataset.id;
+ let inCart = cart.find(item => item.id ===id);
+ if(inCart){
+  button.innerText ="In Cart";
+  button.disabled =true;
+  
+ }
+  button.addEventListener("click",event =>{
+   event.target.innerText = "in Cart";
+   event.target.disabled = true;
+   
+   //get product from products
+   let cartItem = Storage.getProduct(id);
+   console.log(cartItem);
+   //add product to the car
+   //save cart in local storage
+   //set cart values
+   //display cart items
+   //show the cart
+   
+  });
+ }
+ });
+}
+}
 //local storage
-class Storage{}
-
+class Storage{
+static saveProducts(products){
+localStorage.setItem("products",Json.stringify(produsts));
+}
+static getProduct(id)
+}
 document.addEventListener("DOMContentLoaded",()=>{
 
 const ui = new UI();
-const products = new Products();
+const products = new Products(id){
+ let products = JSON.parse(localStoage.getItem("products"));
+ return products.find(product => product.id ===id)
+}
+}
 //get all products
-
+products.getProducts().then(products=> ui.logdisplayProducts(products));
+Storage.saveProducts(products)
 });
