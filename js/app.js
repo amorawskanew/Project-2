@@ -61,7 +61,7 @@ displayProducts(products){
  productsDOM.innerHTML = result;
 
 }
-getButtons(){ 
+getbagButtons(){ 
  const buttons = {...document.querySelectorAll(".bag-btn")
  ];
  buttonsDOM = buttons;
@@ -79,16 +79,26 @@ getButtons(){
    
    //get product from products
    let cartItem = Storage.getProduct(id);
-   console.log(cartItem);
+   console.log(cartItem)
    //add product to the car
+   cart = [...cart, cartItem];
+  
    //save cart in local storage
+   Storage.saveCart(cart)
    //set cart values
+   this.setCartValues(cart);
    //display cart items
+   
    //show the cart
    
   });
- }
+ 
  });
+ }
+}
+setCartValues(cart){
+ let tempTotal =0;
+ let itemsTotal -0;
 }
 }
 //local storage
@@ -96,8 +106,8 @@ class Storage{
 static saveProducts(products){
 localStorage.setItem("products",Json.stringify(produsts));
 }
-static getProduct(id)
-}
+static getProduct(id){
+
 document.addEventListener("DOMContentLoaded",()=>{
 
 const ui = new UI();
